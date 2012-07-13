@@ -8,10 +8,12 @@ describe "Article" do
 	    @article.should be_valid
 	end	
 	it "has a valid title" do
-		FactoryGirl.build(:article, title: nil).should_not be_valid
+		@article.title = ""
+		@article.should_not be_valid
 	end
 	it "has a valid body" do
-		FactoryGirl.build(:article, body: nil).should_not be_valid
+		@article.body = ""
+		@article.should_not be_valid
 	end
 
 end
